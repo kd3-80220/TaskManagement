@@ -1,0 +1,39 @@
+package com.app.service;
+
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.app.dao.TaskDao;
+import com.app.dto.TaskDto;
+import com.app.entities.Task;
+
+@Service
+@Transactional
+public class TaskImpl implements TaskInterface{
+	
+	@Autowired
+	private TaskDao taskDao;
+
+	@Override
+	public String createTask(TaskDto taskDto) {
+		Task newTask=new Task();
+		newTask.setCreatedDate(LocalDate.now());
+		newTask.setDdate(taskDto.getDueDate());
+		newTask.setDescription("Testing");
+		newTask.setPriority(taskDto.getPriority());
+		newTask.setStatus(taskDto.getStatus());
+		newTask.setTitle(taskDto.getTitle());
+		newTask.setUpdatedDate(LocalDate.now());
+		newTask.setUserId(1);
+		
+		Task t=taskDao.save(newTask);
+		if(t!=null)
+		return "task created";
+		else
+			return "task not created";	
+	}
+
+}

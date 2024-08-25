@@ -1,0 +1,9 @@
+package com.app.service;
+
+import com.app.dto.TaskDto;
+
+public interface TaskInterface {
+
+	String createTask(TaskDto task);
+
+}

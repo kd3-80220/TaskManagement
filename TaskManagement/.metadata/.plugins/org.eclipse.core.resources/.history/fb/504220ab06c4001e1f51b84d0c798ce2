@@ -1,0 +1,42 @@
+package com.app.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "User")
+public class UserRegistration extends BaseEntity{
+	@Column(length = 50, nullable = false)
+	private String fullName;
+	@Column(length = 20, unique = true, nullable = false)
+	private String email;
+	@Column(length = 20, unique = true, nullable = false)
+	private String mobileNo;
+	@Column(length = 20, nullable = false)
+	private String password;
+	@Column(length = 100,nullable = false)
+	private String address;
+	@Column(length = 6, nullable = false)
+	private String pinCode;
+	@Column(length = 20, nullable = false)
+	private String city;
+	@Column(length = 20, nullable = false)
+	private String state;
+	
+	public UserRegistration(String fullName, String email, String mobileNo, String password, String address,
+			String pinCode, String city, String state) {
+		super();
+		this.fullName = fullName;
+		this.email = email;
+		this.mobileNo = mobileNo;
+		this.password = password;
+		this.address = address;
+		this.pinCode = pinCode;
+		this.city = city;
+		this.state = state;
+	}
+	
+	
+	
+}

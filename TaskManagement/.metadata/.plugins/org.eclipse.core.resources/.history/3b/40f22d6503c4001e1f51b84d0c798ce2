@@ -1,0 +1,18 @@
+package com.app.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.app.entities.UserRegistration;
+
+@Service
+@Transactional
+public class RegisterUserImpl implements RegisterInterface{
+
+	@Override
+	public UserRegistration addUser(UserRegistration user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
