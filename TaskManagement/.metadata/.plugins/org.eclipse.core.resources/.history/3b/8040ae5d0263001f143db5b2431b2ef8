@@ -29,4 +29,12 @@ logging.level.org.springframework.security=DEBUG
 spring.security.user.name=Admin
 spring.security.user.password=Admin
 
+#####Email Properties#####
+#smtp mail properties
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+
+spring.mail.username=grocerhelp@gmail.com
+spring.mail.password=lhok gzjq bwko smuw
+
 
